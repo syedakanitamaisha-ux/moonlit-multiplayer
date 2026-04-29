@@ -1,4 +1,10 @@
 const express = require('express');
+const path = require("path");
+app.use(express.static(__dirname));
+
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 const http = require('http');
 const { Server } = require('socket.io');
 const path = require('path');
