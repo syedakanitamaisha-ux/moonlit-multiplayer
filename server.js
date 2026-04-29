@@ -13,15 +13,7 @@ app.use(express.static(__dirname));
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
-const http = require('http');
-const { Server } = require('socket.io');
 
-
-const app = express();
-const server = http.createServer(app);
-const io = new Server(server);
-const PORT = process.env.PORT || 3000;
-app.use(express.static(path.join(__dirname, 'public')));
 
 const roleDefs = {
   wolf: { id:'wolf', name:'Wolf', emoji:'🐺', team:'wolf', order:1, desc:'Stay hidden. You win if no wolf is eliminated.' },
